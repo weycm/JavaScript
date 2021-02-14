@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>防抖演示</title>
+	<style>
+    #app {
+      width: 100%;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      color: #fff;
+      background-color: #444;
+      font-size: 30px;
+    }
+	</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="index.js"></script>
+<script>
+  let count = 1
+  let container = document.getElementById('app')
+
+  function getUserAction() {
+    container.innerHTML = count++
+  }
+
+  container.onmousemove = debounce(getUserAction, 1000)
+</script>
+</body>
+</html>
